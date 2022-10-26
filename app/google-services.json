@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90248115671",
+    "project_id": "safehomeapplication-e8219",
+    "storage_bucket": "safehomeapplication-e8219.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90248115671:android:7727273d700dc8badc8792",
+        "android_client_info": {
+          "package_name": "com.example.safehomeapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90248115671-eed0031voeij4igcci962m01mk3cducb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD06h-thqeTWtB5SchW65PU51OAm8F1kuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90248115671-eed0031voeij4igcci962m01mk3cducb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
