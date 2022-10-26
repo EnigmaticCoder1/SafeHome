@@ -1,0 +1,77 @@
+## This workflow uses actions that are not certified by GitHub.
+## They are provided by a third-party and are governed by
+## separate terms of service, privacy policy, and support
+## documentation.
+###########################################################################
+## This workflow will build a Java project with Gradle and
+## cache/restore any dependencies to improve the workflow execution time
+###########################################################################
+name: 'Build, Test Android App'
+env:
+  ANDROID_ENV: development
+  ANDROID_API_LEVEL: 33
+on:
+  push:
+    branches:
+      - 'main'
+      - 'release*'
+      - '*'
+
+  pull_request:
+    branches:
+      - 'main'
+      - 'release*'
+      - '*'
+
+#  # Allows you to run this workflow manually from the Actions tab
+#  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  build-units:
+    runs-on: ubuntu-latest
+    container:
+      image: dalexander2israel/android:2022.09.2
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - run: mkdir -p /github/home/.android/avd/test.avd/
+
+      - name: Gradle cache
+        uses: gradle/gradle-build-action@v2
+      - name: AVD cache
+        uses: actions/cache@v3
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-${{ env.ANDROID_API_LEVEL }}
+
+      - name: List Directory
+        run: ls -liaR
+
+      - name: Download Gradle version
+        run: gradle wrapper
+
+      - name: Download androidDependencies
+        run: ./gradlew androidDependencies
+
+      - name: Lint Test
+        run: ./gradlew lint test
+      - name: Unit Tests
+        run: ./gradlew test
+
+
+
