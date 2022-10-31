@@ -9,6 +9,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import android.view.ViewGroup
+import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_device_information.*
@@ -72,6 +74,7 @@ class activity_deviceInformation : AppCompatActivity(), AdapterView.OnItemSelect
 
         val currentDevice = ref.child(deviceName)
 
+        currentDevice.child("device_name").setValue(deviceName)
         currentDevice.child("location").setValue(deviceLocation)
         currentDevice.child("type").setValue(deviceType)
         currentDevice.child("uid").setValue(userID)
