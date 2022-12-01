@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 class activity_home : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -14,6 +16,11 @@ class activity_home : AppCompatActivity() {
         add_Button.setOnClickListener{
             val add_intent = Intent(this, activity_adddevice::class.java)
             startActivity(add_intent)
+        }
+
+        zoneButton.setOnClickListener{
+            val zone_intent = Intent(this, zonemanager::class.java)
+            startActivity(zone_intent)
         }
 
         logButton.setOnClickListener{
@@ -25,6 +32,7 @@ class activity_home : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             val logout_intent = Intent(this, MainActivity::class.java)
             startActivity(logout_intent)
+            finish()
         }
     }
 }

@@ -31,45 +31,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <TableLayout
-        android:id="@+id/table"
-        android:layout_width="371dp"
-        android:layout_height="393dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688">
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="3dip"
-            android:background="#DD000000"
-            tools:layout_editor_absoluteX="19dp"
-            tools:layout_editor_absoluteY="341dp" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="3dip"
-            android:background="#DDD8D8D8"
-            tools:layout_editor_absoluteX="19dp"
-            tools:layout_editor_absoluteY="341dp" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="3dip"
-            android:background="#DDD8D8D8"
-            tools:layout_editor_absoluteX="19dp"
-            tools:layout_editor_absoluteY="341dp" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="3dip"
-            android:background="#DDD8D8D8"
-            tools:layout_editor_absoluteX="19dp"
-            tools:layout_editor_absoluteY="341dp" />
-    </TableLayout>
-
     <Button
         android:id="@+id/homeButton2"
         android:layout_width="wrap_content"
@@ -78,10 +39,22 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.951" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/logLayout"
+        android:layout_width="396dp"
+        android:layout_height="356dp"
+        app:layout_constraintBottom_toTopOf="@+id/homeButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.844"
+        tools:listitem="@layout/log_item" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

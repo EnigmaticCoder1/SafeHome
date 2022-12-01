@@ -3,72 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="215dp"
-        android:layout_height="149dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="52dp"
-        android:contentDescription="@string/Homelogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/safehome_products"
-        tools:srcCompat="@drawable/safehome_products" />
-
-    <Button
-        android:id="@+id/home_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailText"
-        app:layout_constraintVertical_bias="0.486"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/register_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_here"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
-
+    android:layout_height="match_parent"
+    tools:context=".addzone">
     <EditText
-        android:id="@+id/emailText"
+        android:id="@+id/inputZoneName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoText="false"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textWebEmailAddress"
+        android:hint="Zone Name"
         android:minHeight="48dp"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431"
-        tools:ignore="Deprecated" />
+        app:layout_constraintVertical_bias="0.275"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
-        android:id="@+id/passwordText"
+        android:id="@+id/inputZoneLength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="@string/password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
+        android:hint="Zone Length(feet)"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/inputZoneWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Zone Width(feet)"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,6 +53,36 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.421"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/inputZoneHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Zone Height(feet)"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/submitZone"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#1D4E8C"
+        android:text="Submit New Zone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.868" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
