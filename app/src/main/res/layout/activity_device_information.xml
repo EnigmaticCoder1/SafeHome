@@ -11,11 +11,25 @@
         android:layout_width="211dp"
         android:layout_height="48dp"
         android:layout_marginBottom="72dp"
-        app:layout_constraintBottom_toTopOf="@+id/inputDeviceLocation2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDeviceName2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/inputDeviceZone"
+        android:layout_width="211dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.608"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
@@ -34,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputDeviceName2"
-        app:layout_constraintVertical_bias="0.851" />
+        app:layout_constraintVertical_bias="0.921" />
 
     <EditText
         android:id="@+id/inputDeviceName2"
@@ -48,21 +62,22 @@
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262"
+        app:layout_constraintVertical_bias="0.275"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/submitDevice2"
         android:layout_width="175dp"
         android:layout_height="60dp"
+        android:backgroundTint="#1D4E8C"
         android:text="@string/submit_device"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintVertical_bias="0.868" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

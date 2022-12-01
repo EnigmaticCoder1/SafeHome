@@ -16,6 +16,20 @@
         android:theme="@style/Theme.SafeHomeApplication"
         tools:targetApi="31">
         <activity
+            android:name=".zonemanager"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".addzone"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity_deviceInformation"
             android:exported="false" />
         <activity

@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="330dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="136dp"
@@ -31,42 +21,77 @@
     <Button
         android:id="@+id/logout_button"
         android:layout_width="134dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:layout_marginStart="67dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#003398"
         android:text="@string/logout3"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/add_Button"
-        android:layout_width="137dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="36dp"
-        android:text="@string/add_device"
+        android:layout_width="167dp"
+        android:layout_height="82dp"
+        android:backgroundTint="#CB0000"
+        android:text="Device Manager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
 
     <Button
         android:id="@+id/logButton"
-        android:layout_width="137dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/logs"
+        android:layout_width="167dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="176dp"
+        android:backgroundTint="#003398"
+        android:text="Log Collection"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/zoneButton"
+        android:layout_width="167dp"
+        android:layout_height="82dp"
+        android:backgroundTint="#FECB00"
+        android:text="Zone Manager"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/logButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_Button" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="218dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/logout_button" />
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.905" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome,"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.905" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

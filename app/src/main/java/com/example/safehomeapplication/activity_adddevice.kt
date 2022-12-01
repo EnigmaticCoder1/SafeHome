@@ -4,20 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_adddevice.*
-import android.text.TextUtils
-import android.view.inputmethod.TextSnapshot
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 
 class activity_adddevice : AppCompatActivity() {
     private lateinit var dbref:DatabaseReference
@@ -37,9 +27,6 @@ class activity_adddevice : AppCompatActivity() {
         //get Device data from firebase
         getDeviceData()
 
-
-
-
         homeButton.setOnClickListener{
             val home_intent = Intent(this, activity_home::class.java)
             startActivity(home_intent)
@@ -52,15 +39,24 @@ class activity_adddevice : AppCompatActivity() {
     }
     private fun getDeviceData(){
         dbref = FirebaseDatabase.getInstance().getReference("Devices")
+        val user = FirebaseAuth.getInstance().currentUser
+        val curuid = user?.uid
 
+        //Collects Firebase data on device
         dbref.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
                     for (deviceSnapshot in snapshot.children){
                         val device = deviceSnapshot.getValue(Device::class.java)
-                        deviceArrayList.add(device!!)
+                        if (device != null) {
+                            if(device.uid == curuid) {//Filter the database to devices that is owned by current user
+                                deviceArrayList.add(device!!)
+                            }
+                        }
                     }
+
                     deviceRecyclerView.adapter = DeviceAdapter(deviceArrayList) // Uses Device Adaptor
+
                 }
             }
 

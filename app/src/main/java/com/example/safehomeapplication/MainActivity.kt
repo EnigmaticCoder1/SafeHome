@@ -24,11 +24,6 @@ class MainActivity : AppCompatActivity() {
             val register_intent = Intent(this, activity_register::class.java)
             startActivity(register_intent)
         }
-        //Allow user to bypass login verfication
-        free_login_button.setOnClickListener {
-            val home_intent = Intent(this, activity_home::class.java)
-            startActivity(home_intent)
-        }
 
     }
 
